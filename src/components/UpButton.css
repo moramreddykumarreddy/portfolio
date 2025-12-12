@@ -1,0 +1,39 @@
+.up-button {
+  position: fixed;
+  right: 20px;
+  bottom: 28px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #00d4ff, #ff006e);
+  color: #fff;
+  border: none;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+  cursor: pointer;
+  transform: translateY(12px) scale(0.95);
+  opacity: 0;
+  transition: transform 240ms cubic-bezier(.2,.9,.2,1), opacity 240ms ease, box-shadow 200ms ease;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.up-button.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.up-button:focus {
+  outline: 3px solid rgba(255,255,255,0.12);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.45), 0 0 0 6px rgba(0,212,255,0.06) inset;
+}
+
+.up-button svg { color: white; width: 28px; height: 28px; filter: drop-shadow(0 1px 2px rgba(0,0,0,0.45)); }
+
+@media (max-width: 480px) {
+  .up-button { right: 14px; bottom: 20px; width: 48px; height: 48px; }
+  .up-button svg { width: 22px; height: 22px; }
+}

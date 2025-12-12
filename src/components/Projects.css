@@ -193,6 +193,13 @@
   margin: 0.5rem 0 1rem 0;
 }
 
+.project-links {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin-top: auto;
+}
+
 .tech-badge {
   background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(255, 0, 110, 0.1) 100%);
   color: #00d4ff;
@@ -246,6 +253,20 @@
 
 .project-link:hover svg {
   transform: translateY(-3px);
+}
+
+.project-link.secondary {
+  color: #ff6aa3;
+  border-color: rgba(255, 0, 110, 0.25);
+  background: linear-gradient(135deg, rgba(255, 0, 110, 0.05) 0%, transparent 100%);
+}
+
+.project-link.secondary:hover {
+  color: #ffffff;
+  border-color: #ff006e;
+  background: linear-gradient(135deg, rgba(255, 0, 110, 0.15) 0%, rgba(255, 0, 110, 0.05) 100%);
+  box-shadow: 0 0 20px rgba(255, 0, 110, 0.18);
+  transform: translateX(5px);
 }
 
 @keyframes float {

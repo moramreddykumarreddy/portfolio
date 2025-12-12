@@ -3,31 +3,11 @@ import './Projects.css';
 const projects = [
   {
     id: 1,
-    title: 'E-Commerce Web Platform',
-    description: 'A full-stack e-commerce solution with Angular frontend, .NET Core backend, and SQL Server database. Includes product catalog, shopping cart, order management, and payment integration.',
-    technologies: ['Angular', '.NET Core', 'SQL Server', 'Entity Framework', 'RESTful APIs'],
-    link: '#',
-  },
-  {
-    id: 2,
-    title: 'Employee Management System',
-    description: 'A real-time employee management application featuring employee records, department management, leave requests, and performance tracking with role-based access control.',
-    technologies: ['Angular', '.NET Core', 'SQL Server', 'TypeScript', 'Entity Framework'],
-    link: '#',
-  },
-  {
-    id: 3,
-    title: 'Task Manager Application',
-    description: 'A collaborative task management system with real-time updates, task assignments, priority levels, and status tracking for team productivity.',
-    technologies: ['Angular', '.NET Core', 'SQL Server', 'WebSocket', 'Entity Framework'],
-    link: '#',
-  },
-  {
-    id: 4,
-    title: 'Portfolio Website',
-    description: 'A responsive portfolio website built with React and modern web technologies to showcase professional work and skills.',
-    technologies: ['React', 'Vite', 'JavaScript', 'CSS3', 'Responsive Design'],
-    link: '#',
+    title: '2048 Game',
+    description: 'A browser implementation of the classic 2048 puzzle game. Includes smooth animations, keyboard controls, and score tracking.',
+    technologies: ['JavaScript', 'HTML', 'CSS', 'Vite'],
+    link: 'https://github.com/moramreddykumarreddy/2048_Game',
+    liveDemo: 'https://2048-game-nine-plum.vercel.app/',
   },
 ];
 
@@ -52,12 +32,25 @@ export default function Projects() {
                     <span key={tech} className="tech-badge">{tech}</span>
                   ))}
                 </div>
-                <a href={project.link} className="project-link">
-                  <span>Explore Project</span>
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M8 1V15M8 1L1 8M8 1L15 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </a>
+                <div className="project-links">
+                  {project.link && (
+                    <a href={project.link} className="project-link" target="_blank" rel="noopener noreferrer">
+                      <span>Explore Project</span>
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8 1V15M8 1L1 8M8 1L15 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </a>
+                  )}
+
+                  {project.liveDemo && (
+                    <a href={project.liveDemo} className="project-link secondary" target="_blank" rel="noopener noreferrer">
+                      <span>Live Demo</span>
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 8h10M8 3v10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </a>
+                  )}
+                </div>
               </div>
             </div>
           ))}
